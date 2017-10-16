@@ -164,6 +164,15 @@ class cexapi {
 	}
 
 	/**
+	 * Cancel all orders of a given pair for the account.
+	 * @param string $couple
+	 * @return boolean success
+	 */
+	public function cancel_all_order($couple = 'GHS/BTC') {
+		return $this->api_call('cancel_orders/', null, true, $couple);
+	}
+
+	/**
 	 * Cancel the given order for the account.
 	 * @param int $order_id
 	 * @return boolean success
